@@ -1,0 +1,4 @@
+{
+    "geo_ip_service_base_url" : "https://api.m3o.com/v1/ip/Lookup",
+    "geo_ip_service_api_key" : "NThmNmY4YWMtNzM1Yy00NThlLTlhYjAtNDc1NzAyYjRjYmRh"
+}
