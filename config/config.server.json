@@ -1,0 +1,9 @@
+{
+  "http_domain_address": "localhost",
+  "http_client_server_port": "8080",
+  "logs_path" : "./log/logs",
+  "logs" : {
+    "debug_log_file": "debug.log",
+    "error_log_file": "error.log"
+  }
+}

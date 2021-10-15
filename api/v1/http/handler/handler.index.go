@@ -2,6 +2,7 @@ package handler
 
 import (
 	"github.com/Benyam-S/dostuff/geoip"
+	"github.com/Benyam-S/dostuff/log"
 	"github.com/Benyam-S/dostuff/translate"
 )
 
@@ -9,6 +10,7 @@ import (
 type APIHandler struct {
 	GeoIPService       geoip.IService
 	TranslationService translate.IService
+	logger             *log.Logger
 }
 
 // APIRespone is a type that defines what the API end points return
@@ -19,6 +21,7 @@ type APIRespone struct {
 }
 
 // NewAPIHandler is a function that returns a new API handler
-func NewAPIHandler(locationService geoip.IService, translationService translate.IService) *APIHandler {
-	return &APIHandler{GeoIPService: locationService, TranslationService: translationService}
+func NewAPIHandler(locationService geoip.IService, translationService translate.IService,
+	logger *log.Logger) *APIHandler {
+	return &APIHandler{GeoIPService: locationService, TranslationService: translationService, logger: logger}
 }

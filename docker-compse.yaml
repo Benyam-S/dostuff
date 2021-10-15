@@ -9,5 +9,5 @@ services:
       - "8080:8080"
     tty: true
     volumes:
-      - "/root/dostaff/config:/dostaff/config"
-      - "/root/dostaff/log:/dostaff/log"
+      - "/root/dostuff/config:/dostuff/config"
+      - "/root/dostuff/log:/dostuff/log"

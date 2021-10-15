@@ -11,3 +11,11 @@ type GeoIPLocation struct {
 	Longitude float64 `json:"longitude"`
 	TimeZone  string  `json:"timezone"`
 }
+
+// SystemConfig is a type that defines a server system configuration file
+type SystemConfig struct {
+	HTTPDomainAddress    string            `json:"http_domain_address"`
+	HTTPClientServerPort string            `json:"http_client_server_port"`
+	LogsPath             string            `json:"logs_path"`
+	Logs                 map[string]string `json:"logs"`
+}
