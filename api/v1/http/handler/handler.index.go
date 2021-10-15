@@ -1,10 +1,14 @@
 package handler
 
-import "github.com/Benyam-S/dostaff/geoip"
+import (
+	"github.com/Benyam-S/dostaff/geoip"
+	"github.com/Benyam-S/dostaff/translate"
+)
 
 // APIHandler is a type that defines a handler for api client
 type APIHandler struct {
-	GeoIPService geoip.IService
+	GeoIPService       geoip.IService
+	TranslationService translate.IService
 }
 
 // APIRespone is a type that defines what the API end points return
@@ -15,6 +19,6 @@ type APIRespone struct {
 }
 
 // NewAPIHandler is a function that returns a new API handler
-func NewAPIHandler(locationService geoip.IService) *APIHandler {
-	return &APIHandler{GeoIPService: locationService}
+func NewAPIHandler(locationService geoip.IService, translationService translate.IService) *APIHandler {
+	return &APIHandler{GeoIPService: locationService, TranslationService: translationService}
 }

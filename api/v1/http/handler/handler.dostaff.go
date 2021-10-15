@@ -7,27 +7,40 @@ import (
 	"github.com/Benyam-S/dostaff/tools"
 )
 
-// HandleCoolStaff is a handler function that handles request for doing staff
-func (handler *APIHandler) HandleDoStaff(w http.ResponseWriter, r *http.Request) {
+// HandleDoStuff is a handler function that handles request for doing stuff
+func (handler *APIHandler) HandleDoStuff(w http.ResponseWriter, r *http.Request) {
 
 	var apiRespone *APIRespone
 
+	// Getting client ip address
 	clientIP := tools.GetClientIP(r)
-	// clientIP := "197.156.95.233"
 
+	// Getting the location of the client using its IP address
 	geoIPLocation, err := handler.GeoIPService.GetGeoIPLocation(clientIP)
 	if err != nil {
 		apiRespone = &APIRespone{
 			Status:   http.StatusBadRequest,
-			Result:   "Didn't Do Staff",
+			Result:   "Did nothing",
 			Location: "Oops, we couldn't find your location!",
 		}
 	} else {
-		apiRespone = &APIRespone{
-			Status:   http.StatusOK,
-			Result:   "Did Staff",
-			Location: geoIPLocation.Country,
+
+		// Translating stuff to client's location language
+		translatedStuff, err := handler.TranslationService.TranslateStuff(geoIPLocation.Country)
+		if err != nil {
+			apiRespone = &APIRespone{
+				Status:   http.StatusOK,
+				Result:   "Oops, we couldn't find your location language!",
+				Location: geoIPLocation.Country,
+			}
+		} else {
+			apiRespone = &APIRespone{
+				Status:   http.StatusOK,
+				Result:   translatedStuff,
+				Location: geoIPLocation.Country,
+			}
 		}
+
 	}
 
 	result, err := json.MarshalIndent(apiRespone, "", "")
