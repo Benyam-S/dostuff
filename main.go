@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	v1 "github.com/Benyam-S/dostuff/api/v1"
 	"github.com/gorilla/mux"
@@ -18,5 +19,5 @@ func main() {
 
 	fmt.Println("Web server has been successfully started!")
 
-	http.ListenAndServe(":8080", router)
+	http.ListenAndServe(":"+os.Getenv("http_client_server_port"), router)
 }

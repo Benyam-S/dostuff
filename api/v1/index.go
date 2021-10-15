@@ -73,6 +73,7 @@ func Start(router *mux.Router) {
 
 	os.Setenv("geo_ip_service_base_url", baseURL)
 	os.Setenv("geo_ip_service_api_key", apiKey)
+	os.Setenv("http_client_server_port", sysConfig.HTTPClientServerPort)
 
 	// Reading data from repository.store.json file
 	store := make(map[string]string)
