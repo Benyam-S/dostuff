@@ -4,7 +4,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/Benyam-S/dostaff/translate"
+	"github.com/Benyam-S/dostuff/translate"
 )
 
 // TranslateService is a type that defines a translation service

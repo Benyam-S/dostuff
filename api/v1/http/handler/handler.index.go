@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"github.com/Benyam-S/dostaff/geoip"
-	"github.com/Benyam-S/dostaff/translate"
+	"github.com/Benyam-S/dostuff/geoip"
+	"github.com/Benyam-S/dostuff/translate"
 )
 
 // APIHandler is a type that defines a handler for api client

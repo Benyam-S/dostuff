@@ -7,9 +7,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Benyam-S/dostaff/api/v1/http/handler"
-	geoService "github.com/Benyam-S/dostaff/geoip/service"
-	tranService "github.com/Benyam-S/dostaff/translate/service"
+	"github.com/Benyam-S/dostuff/api/v1/http/handler"
+	geoService "github.com/Benyam-S/dostuff/geoip/service"
+	tranService "github.com/Benyam-S/dostuff/translate/service"
 	"github.com/gorilla/mux"
 )
 

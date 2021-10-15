@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Benyam-S/dostaff/entity"
-	"github.com/Benyam-S/dostaff/geoip"
+	"github.com/Benyam-S/dostuff/entity"
+	"github.com/Benyam-S/dostuff/geoip"
 )
 
 // GeoIPService is a type that defines Geo IP service

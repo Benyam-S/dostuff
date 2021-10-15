@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	v1 "github.com/Benyam-S/dostaff/api/v1"
+	v1 "github.com/Benyam-S/dostuff/api/v1"
 	"github.com/gorilla/mux"
 )
 

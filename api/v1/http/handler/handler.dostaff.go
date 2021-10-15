@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/Benyam-S/dostaff/tools"
+	"github.com/Benyam-S/dostuff/tools"
 )
 
 // HandleDoStuff is a handler function that handles request for doing stuff
