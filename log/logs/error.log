@@ -1,0 +1,1 @@
+[ 2021-10-16 15:26:38.6078289 +0300 EAT m=+21.859835801 ] Error: unable to determine the location from Geo IP Location service response, Geo IP Location => {"ip":"","asn":0,"city":"","country":"","continent":"","latitude":0,"longitude":0,"timezone":""}
