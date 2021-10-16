@@ -31,9 +31,9 @@ func (handler *APIHandler) HandleDoPrettyCoolStuff(w http.ResponseWriter, r *htt
 
 	} else {
 		status = http.StatusOK
-		result = "Thank You for using this api. \n" +
-			"If you are intersted in doing pretty cool stuff check out \n" +
-			"the repository https://github.com/Benyam-S/dostuff. \n" +
+		result = "Thank You for using this api. " +
+			"If you are intersted in doing pretty cool stuff check out " +
+			"the repository https://github.com/Benyam-S/dostuff. " +
 			"Let as collaberate in doing pretty cool stuff!"
 		location = geoIPLocation.Country
 
