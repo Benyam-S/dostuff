@@ -78,6 +78,22 @@ func Start(router *mux.Router) {
 	os.Setenv("server.pem", filepath.Join(pwd, "config/server.pem"))
 	os.Setenv("server.key", filepath.Join(pwd, "config/server.key"))
 
+	// Checking for ssl server public key or certificate file
+	_, err = os.Stat(os.Getenv("server.pem"))
+	if err != nil {
+		logger.Log(fmt.Sprintf("Error: Unable to find ssl server certificate file. "+
+			"Certificate file: ./config/server.pem, %s", err.Error()), logger.Logs.ErrorLogFile)
+		os.Exit(1)
+	}
+
+	// Checking for ssl server private key file
+	_, err = os.Stat(os.Getenv("server.key"))
+	if err != nil {
+		logger.Log(fmt.Sprintf("Error: Unable to find ssl server private key file. "+
+			"Private key file: ./config/server.key, %s", err.Error()), logger.Logs.ErrorLogFile)
+		os.Exit(1)
+	}
+
 	// Reading data from repository.store.json file
 	store := make(map[string]string)
 	storeDir := filepath.Join(pwd, "translate/repository/repository.store.json")
