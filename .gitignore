@@ -1,3 +1,7 @@
 playground
-logs/debug.log
-logs/error.log
+# Ignoring log files
+log/logs/debug.log
+log/logs/error.log
+# Ignoring certificate files
+config/server.pem
+config/server.key
