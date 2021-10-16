@@ -19,5 +19,5 @@ func main() {
 
 	fmt.Println("Web server has been successfully started!")
 
-	http.ListenAndServe(":"+os.Getenv("http_client_server_port"), router)
+	http.ListenAndServe(":"+os.Getenv("PORT"), router)
 }
